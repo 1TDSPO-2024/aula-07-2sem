@@ -1,4 +1,5 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import { listaProduto } from "../listaProduto";
 
 export default function EditarProdutos(){
 
@@ -11,11 +12,13 @@ export default function EditarProdutos(){
       //Então teriamos que realizar a seguinte ação para receber esta informação.
       // const{dados} = useParams(), um detalhe aqui é que o useParams() pertence ao react-router e deve ser importado dele
       const {id} = useParams();
-      const paramsEncapsulado1 = useParams().id;
       
+     
+
       return(
       <div>
         <h1>Olá, mundo sou o EditarProdutos!</h1>
+       
         <div>
           <h2>ID: {id}</h2>
           
