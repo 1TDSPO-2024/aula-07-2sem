@@ -11,7 +11,11 @@ export default function EditarProdutos() {
   //Então teriamos que realizar a seguinte ação para receber esta informação.
   // const{dados} = useParams(), um detalhe aqui é que o useParams() pertence ao react-router e deve ser importado dele
   const { id } = useParams();
-  const paramEncapsulado = useParams().id
+  let produtoPesquisado = ''
+  if (id) {
+    produtoPesquisado.listaProdutos.find((produto) => produto.id == id)
+
+  }
   return (
     <div>
       <h1>Olá, mundo sou o EditarProdutos!</h1>
