@@ -1,4 +1,5 @@
 import { useParams } from "react-router-dom";
+import { listaProdutos } from "../../listaProdutos";
 
 export default function EditarProdutos() {
 
@@ -12,11 +13,23 @@ export default function EditarProdutos() {
   // const{dados} = useParams(), um detalhe aqui é que o useParams() pertence ao react-router e deve ser importado dele
   const { id } = useParams();
 
+  if (id != "undefined") {
+    listaProdutos.map((produto) => {
+      if (produto.id == parseInt(id)) {
+        console.log(produto.id);
+      }
+    });
+  }
+
+
+
+
   return (
     <div>
       <h1>Olá, mundo sou o EditarProdutos!</h1>
       <div>
         <h2>ID: {id}</h2>
+        <h2>{produtoPesquisado}</h2>
       </div>
     </div>
   );
