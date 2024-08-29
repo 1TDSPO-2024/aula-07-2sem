@@ -11,6 +11,7 @@ export default function EditarProdutos(){
       //Então teriamos que realizar a seguinte ação para receber esta informação.
       // const{dados} = useParams(), um detalhe aqui é que o useParams() pertence ao react-router e deve ser importado dele
       const {id} = useParams();
+      //'id' é o parametro criado na main // useParams(); = função de retorno dos parametros, porém apenas após desestruturar o item  
 
       return(
       <div>
