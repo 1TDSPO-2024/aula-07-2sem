@@ -1,4 +1,5 @@
 import { useParams } from "react-router-dom";
+import { listaProdutos } from "../../ListaProdutos";
 
 export default function EditarProdutos(){
 
@@ -10,14 +11,24 @@ export default function EditarProdutos(){
       //O destructuring irá recuperar o dado que foi passado na rota e atribuir a propriedade de um elemento cuja o nome é aquele criado na rota, antes do dois pontos,ou seja, (:dados)
       //Então teriamos que realizar a seguinte ação para receber esta informação.
       // const{dados} = useParams(), um detalhe aqui é que o useParams() pertence ao react-router e deve ser importado dele
+      
       const {id} = useParams();
       //'id' é o parametro criado na main // useParams(); = função de retorno dos parametros, porém apenas após desestruturar o item  
+      let produtoPesquisado;
+      if (typeof id != undefined){
+        [...produtoPesquisado] = listaProdutos.map((produto) => produto.id == parseInt(id))
+      }else {
+        produtoPesquisado = "produto não encontrado"
+      }
+      
+
 
       return(
       <div>
         <h1>Olá, mundo sou o EditarProdutos!</h1>
         <div>
           <h2>ID: {id}</h2>
+          <h2>{produtoPesquisado}</h2>
         </div>
       </div>
     );
